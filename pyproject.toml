@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "test-shift"
+version = "0.1.0"
+description = ""
+authors = ["monter220 <bdstomsk@gmail.com>"]
+readme = "README.md"
+packages = [{include = "test_shift"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.116.0"
+uvicorn = {version = "0.17.6", extras = ["standard"]}
+pydantic = "^2.11.7"
+python-dotenv = "^1.1.1"
+pydantic-settings = "^2.10.1"
+aiosqlite = "0.17.0"
+alembic = "1.7.7"
+sqlalchemy = "^2.0.41"
+fastapi-users = {version = "13", extras = ["sqlalchemy"]}
+setuptools = "^80.9.0"
+
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "test_shift"
+]
+
+
+[tool.poetry.scripts]
+start = "test_shift.app.main:start"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
